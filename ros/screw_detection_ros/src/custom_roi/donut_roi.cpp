@@ -41,7 +41,7 @@ cv::Mat DonutROI::getROI(cv::Vec2f& reference, const cv::Mat& image, const Pixel
     //When considering the ROI it accounts for all screws whos center is inside the ROI
     //Thus extends the ROI by the max possible screw size
     int outer_circle_radius = screw_radius_px_max() + max_circle_size / 2;
-    int inner_circle_radius = screw_radius_px_min() - max_circle_size / 2;
+    int inner_circle_radius = 0;
 
     //The mask starts as all background, the first circle applies a filled circle
     //as foreground, and the second circle accounts for the hole ine the middle of
