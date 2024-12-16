@@ -49,7 +49,7 @@ cv::Mat DonutROI::getROI(cv::Vec2f& reference, const cv::Mat& image, const Pixel
     cv::circle(donut_mask, cv::Point(reference[0], reference[1]),
         screw_radius_px_max(), foreground, -1);
     cv::circle(donut_mask, cv::Point(reference[0], reference[1]),
-        screw_radius_px_min(), background, -1);
+        0, background, -1);
 
     cv::Mat roi;
     image.copyTo(roi, donut_mask); //Copies area inside of donut mask of image into roi
